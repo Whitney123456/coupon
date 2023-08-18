@@ -1,0 +1,8 @@
+/Users/huiningzhang/Documents/SpringBootDemo/coupon-dev/trade-user/src/main/java/com/shangan/trade/user/model/CouponBatch.java
+/Users/huiningzhang/Documents/SpringBootDemo/coupon-dev/trade-user/src/main/java/com/shangan/trade/user/client/CouponFeignClient.java
+/Users/huiningzhang/Documents/SpringBootDemo/coupon-dev/trade-user/src/main/java/com/shangan/trade/user/utils/RedisWorker.java
+/Users/huiningzhang/Documents/SpringBootDemo/coupon-dev/trade-user/src/main/java/com/shangan/trade/user/TradeUserApplication.java
+/Users/huiningzhang/Documents/SpringBootDemo/coupon-dev/trade-user/src/main/java/com/shangan/trade/user/model/Coupon.java
+/Users/huiningzhang/Documents/SpringBootDemo/coupon-dev/trade-user/src/main/java/com/shangan/trade/user/vo/CouponVO.java
+/Users/huiningzhang/Documents/SpringBootDemo/coupon-dev/trade-user/src/main/java/com/shangan/trade/user/controller/UserCouponController.java
+/Users/huiningzhang/Documents/SpringBootDemo/coupon-dev/trade-user/src/main/java/com/shangan/trade/user/model/CouponRule.java

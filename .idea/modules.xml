@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/trade-coupon/trade-coupon.iml" filepath="$PROJECT_DIR$/trade-coupon/trade-coupon.iml" />
+      <module fileurl="file://$PROJECT_DIR$/trade-user/trade-user.iml" filepath="$PROJECT_DIR$/trade-user/trade-user.iml" />
+    </modules>
+  </component>
+</project>

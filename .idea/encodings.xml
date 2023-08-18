@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/trade-admin/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/trade-coupon/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/trade-goods/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/trade-goods2/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/trade-goods3/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/trade-goodsme/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/trade-goos/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/trade-goos2/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/trade-order/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/trade-stuff/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/trade-user/src/main/java" charset="UTF-8" />
+  </component>
+</project>

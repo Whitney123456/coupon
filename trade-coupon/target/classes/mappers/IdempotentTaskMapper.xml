@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shangan.trade.coupon.db.mappers.IdempotentTaskMapper">
+  <resultMap id="BaseResultMap" type="com.shangan.trade.coupon.db.model.IdempotentTask">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="biz_type" jdbcType="VARCHAR" property="bizType" />
+    <result column="biz_id" jdbcType="VARCHAR" property="bizId" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, biz_type, biz_id, create_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from idempotent
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from idempotent
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.shangan.trade.coupon.db.model.IdempotentTask">
+    insert into idempotent (id, biz_type, biz_id, 
+      create_time)
+    values (#{id,jdbcType=BIGINT}, #{bizType,jdbcType=VARCHAR}, #{bizId,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.shangan.trade.coupon.db.model.IdempotentTask">
+    insert into idempotent
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="bizType != null">
+        biz_type,
+      </if>
+      <if test="bizId != null">
+        biz_id,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="bizType != null">
+        #{bizType,jdbcType=VARCHAR},
+      </if>
+      <if test="bizId != null">
+        #{bizId,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.shangan.trade.coupon.db.model.IdempotentTask">
+    update idempotent
+    <set>
+      <if test="bizType != null">
+        biz_type = #{bizType,jdbcType=VARCHAR},
+      </if>
+      <if test="bizId != null">
+        biz_id = #{bizId,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.shangan.trade.coupon.db.model.IdempotentTask">
+    update idempotent
+    set biz_type = #{bizType,jdbcType=VARCHAR},
+      biz_id = #{bizId,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <select id="queryIdempotentTaskByBiz" parameterType="com.shangan.trade.coupon.db.model.IdempotentTask"
+          resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"/>
+    from idempotent
+    where biz_type = #{bizType,jdbcType=VARCHAR} and
+    biz_id = #{bizId,jdbcType=VARCHAR}
+  </select>
+</mapper>

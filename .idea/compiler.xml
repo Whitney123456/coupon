@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="trade-coupon" />
+        <module name="trade-admin" />
+        <module name="trade-user" />
+        <module name="trade-order" />
+        <module name="trade-goos2" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="coupon-dev" target="1.8" />
+      <module name="trade-goods" target="1.8" />
+      <module name="trade-goods2" target="1.8" />
+      <module name="trade-goods3" target="17" />
+      <module name="trade-goodsme" target="1.6" />
+      <module name="trade-goos" target="1.8" />
+      <module name="trade-stuff" target="1.8" />
+      <module name="trade-user (1)" target="1.8" />
+      <module name="trade-user (2)" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="coupon-dev" options="" />
+      <module name="trade-admin" options="-parameters" />
+      <module name="trade-coupon" options="-parameters" />
+      <module name="trade-goods" options="-parameters" />
+      <module name="trade-goods2" options="-parameters" />
+      <module name="trade-goods3" options="-parameters" />
+      <module name="trade-goodsme" options="-parameters" />
+      <module name="trade-goos" options="-parameters" />
+      <module name="trade-goos2" options="-parameters" />
+      <module name="trade-order" options="-parameters" />
+      <module name="trade-stuff" options="-parameters" />
+      <module name="trade-user" options="-parameters" />
+      <module name="trade-user (1)" options="-parameters" />
+      <module name="trade-user (2)" options="-parameters" />
+    </option>
+  </component>
+</project>

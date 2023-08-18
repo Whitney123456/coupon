@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shangan.trade.coupon.db.mappers.TaskMapper">
+  <resultMap id="BaseResultMap" type="com.shangan.trade.coupon.db.model.Task">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="try_count" jdbcType="INTEGER" property="tryCount" />
+    <result column="biz_type" jdbcType="VARCHAR" property="bizType" />
+    <result column="biz_id" jdbcType="VARCHAR" property="bizId" />
+    <result column="biz_param" jdbcType="VARCHAR" property="bizParam" />
+    <result column="schedule_time" jdbcType="TIMESTAMP" property="scheduleTime" />
+    <result column="modified_time" jdbcType="TIMESTAMP" property="modifiedTime" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, status, try_count, biz_type, biz_id, biz_param, schedule_time, modified_time, 
+    create_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from task
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from task
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.shangan.trade.coupon.db.model.Task">
+    insert into task (id, status, try_count, 
+      biz_type, biz_id, biz_param, 
+      schedule_time, modified_time, create_time
+      )
+    values (#{id,jdbcType=BIGINT}, #{status,jdbcType=INTEGER}, #{tryCount,jdbcType=INTEGER}, 
+      #{bizType,jdbcType=VARCHAR}, #{bizId,jdbcType=VARCHAR}, #{bizParam,jdbcType=VARCHAR}, 
+      #{scheduleTime,jdbcType=TIMESTAMP}, #{modifiedTime,jdbcType=TIMESTAMP}, #{createTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.shangan.trade.coupon.db.model.Task">
+    insert into task
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="tryCount != null">
+        try_count,
+      </if>
+      <if test="bizType != null">
+        biz_type,
+      </if>
+      <if test="bizId != null">
+        biz_id,
+      </if>
+      <if test="bizParam != null">
+        biz_param,
+      </if>
+      <if test="scheduleTime != null">
+        schedule_time,
+      </if>
+      <if test="modifiedTime != null">
+        modified_time,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="tryCount != null">
+        #{tryCount,jdbcType=INTEGER},
+      </if>
+      <if test="bizType != null">
+        #{bizType,jdbcType=VARCHAR},
+      </if>
+      <if test="bizId != null">
+        #{bizId,jdbcType=VARCHAR},
+      </if>
+      <if test="bizParam != null">
+        #{bizParam,jdbcType=VARCHAR},
+      </if>
+      <if test="scheduleTime != null">
+        #{scheduleTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifiedTime != null">
+        #{modifiedTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.shangan.trade.coupon.db.model.Task">
+    update task
+    <set>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="tryCount != null">
+        try_count = #{tryCount,jdbcType=INTEGER},
+      </if>
+      <if test="bizType != null">
+        biz_type = #{bizType,jdbcType=VARCHAR},
+      </if>
+      <if test="bizId != null">
+        biz_id = #{bizId,jdbcType=VARCHAR},
+      </if>
+      <if test="bizParam != null">
+        biz_param = #{bizParam,jdbcType=VARCHAR},
+      </if>
+      <if test="scheduleTime != null">
+        schedule_time = #{scheduleTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifiedTime != null">
+        modified_time = #{modifiedTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.shangan.trade.coupon.db.model.Task">
+    update task
+    set status = #{status,jdbcType=INTEGER},
+      try_count = #{tryCount,jdbcType=INTEGER},
+      biz_type = #{bizType,jdbcType=VARCHAR},
+      biz_id = #{bizId,jdbcType=VARCHAR},
+      biz_param = #{bizParam,jdbcType=VARCHAR},
+      schedule_time = #{scheduleTime,jdbcType=TIMESTAMP},
+      modified_time = #{modifiedTime,jdbcType=TIMESTAMP},
+      create_time = #{createTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+
+  <update id="updateByBiz" parameterType="com.shangan.trade.coupon.db.model.Task">
+    update task
+    set status        = #{status,jdbcType=INTEGER},
+        try_count     = #{tryCount,jdbcType=INTEGER},
+        biz_type      = #{bizType,jdbcType=VARCHAR},
+        biz_id        = #{bizId,jdbcType=VARCHAR},
+        biz_param     = #{bizParam,jdbcType=VARCHAR},
+        schedule_time = #{scheduleTime,jdbcType=TIMESTAMP},
+        modified_time = #{modifiedTime,jdbcType=TIMESTAMP},
+        create_time   = #{createTime,jdbcType=TIMESTAMP}
+    where biz_type = #{bizType,jdbcType=VARCHAR}
+      and biz_id = #{bizId,jdbcType=VARCHAR}
+  </update>
+
+  <select id="queryFailedTasks" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"/>
+    from task
+    where status = 2 limit 100;
+  </select>
+
+  <select id="queryRemindTasks" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"/>
+    from task
+    where status = 0 and biz_type = 'remind_coupon' and schedule_time <![CDATA[ <= ]]>now() limit 100;
+  </select>
+</mapper>

@@ -1,0 +1,4 @@
+com/shangan/trade/coupon/TaskTest.class
+com/shangan/trade/coupon/CouponCodeTest.class
+com/shangan/trade/coupon/RedisTest.class
+com/shangan/trade/coupon/CouponSendTest.class
